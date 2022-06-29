@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Routeファサードのgetメソッドの呼び出し
+// 第一引数:URL 第二引数:どのコントローラーで何のメソッドを実行するかを記載
+// コントローラーとメソッドの間には@を入れる
+Route::get('/', 'ArticleController@index');
