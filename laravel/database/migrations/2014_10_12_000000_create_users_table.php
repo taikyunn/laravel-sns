@@ -15,10 +15,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            /**
+             * unique()
+             * カラムにユニーク制約をつけることができる
+             */
+            $table->string('name')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            /**
+             * nullable()
+             * nullを許容する。
+             */
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
