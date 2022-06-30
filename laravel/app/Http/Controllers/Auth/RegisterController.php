@@ -62,8 +62,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            /**
+             * 必須・文字列・英文字であるか・3文字以上16文字まで・ユニークな名前か
+             * unique:カラム名がリストされたパラメータ名と異なる場合にはテーブル名の後に間まで区切ってカラム名を指定すること
+             * 'nickname' => ['unique:users,name']
+            */
+            'name' => ['required', 'string', 'alpha_num', 'min:3', 'max:16', 'unique:users'],
+            // 必須・文字列・メールアドレス形式・最大255文字・他のメールアドレスと被らない
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // 必須・文字列・最小8文字・自分の項目_confirmedという別の項目(password_confirmed)と一致
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
