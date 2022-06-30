@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,6 +90,10 @@ return [
     | The fallback locale determines the locale to use when the current one
     | is not available. You may change the value to correspond to any of
     | the language folders that are provided through your application.
+    |
+    | localeで指定した言語のファイルが見つからなかった場合にどの言語ファイルを使用するかを設定
+    | 今回はデフォルトのenのままとする
+    | 今回作成したvalidation.php以外のものに関しては,laravel/resources/lang/enディレクトリの言語ファイルが使用される
     |
     */
 
