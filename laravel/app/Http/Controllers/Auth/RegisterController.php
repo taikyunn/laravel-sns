@@ -22,10 +22,22 @@ class RegisterController extends Controller
     |
     */
 
+    /**
+     * トレイトの宣言
+     *
+     * 以下のメソッドはこのクラス内では定義されておらず、トレイト内で記載されている
+     *
+     * RegisterController@showRegistrationForm
+     * RegisterController@register
+     *
+     * メソッドが見つからなかった場合はトレイトを疑うか、関数名で検索をかけると良さそう
+     */
+
     use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
+     * redirectToプロパティを設定
      *
      * @var string
      */

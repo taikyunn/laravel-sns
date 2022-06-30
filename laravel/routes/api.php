@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+/**
+ * 今回はapiを使わないのでコメントアウトする
+ * コメントアウトor削除をしてroute一覧を取得すると、ルーティングが削除される
+ * Route::middleware('auth:api')->get('/user', function (Request $request) {
+ *  return $request->user();
+ * });
+ */
+
